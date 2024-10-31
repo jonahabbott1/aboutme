@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>About me</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Crimson+Pro">
+        <style>
+        body {
+            font-family: 'Crimson Pro', serif;
+            font-size: 20px;
+        }
+        </style>
+    </head>
+    <body>
+        <h2>Hi, my name is Jonah</h2>
+        <p>I am a 20 year old Cybersecurity student at Brigham Young University, orginally from Arizona! This page is more about me</p>
+        <h2>Family</h2>
+        <p>I was originally born in Provo, Utah, while my Dad was attending BYU law school. We have since lived in Maryland, California, Utah, and Arizona. I have 6 siblings, and also a twin brother. My 18 year old brother is living in Ohio serving as a church missionary. The rest of my family is living in Arizona. Although I am the only one in my family living in Arizona, luckily I have many cousins that also attend BYU.</p>
+        <h2>Hobbies and Interest</h2>
+        <p>I really like learning and spending time outside, here is a list of things that I like to do:
+            <ul>
+                <li>Pickleball</li>
+                <li>Hiking</li>
+                <li>Coding</li>
+                <li>Eating Taco Bell</li>
+              </ul>
+        </p>
+        <h2>Mission in New York City</h2>
+        <p>From June 2022 to June 2024 I was living in New York City as a missionary for the Church of Jesus Christ of Latter-day Saints. Every day for 2 years I taught people about God and Jesus Christ, and spent a lot of time serving others. It was an incredible experience and I learned so much! I also spent 6 of those 24 months serving in Connecticut where I made so many friends that I still keep in touch to this day. </p>
+        <p>Photos:</p>
+        <div style="text-align: center;">
+            <img id="photo" src="newyork.png" alt="Photo" style="width:300px; height:300px;">
+            <br>
+            <button onclick="prevPhoto()">Previous</button>
+            <button onclick="nextPhoto()">Next</button>
+        </div>
+        <script>
+            const photos = ["newyork.png", "family.jpg", "me.jpg", "pickleball.jpg"];
+            let currentPhotoIndex = 0;
+
+        function updatePhoto() {
+            document.getElementById("photo").src = photos[currentPhotoIndex];
+        }
+
+        function nextPhoto() {
+            currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
+            updatePhoto();
+        }
+
+        function prevPhoto() {
+            currentPhotoIndex = (currentPhotoIndex - 1 + photos.length) % photos.length;
+            updatePhoto();
+        }
+        </script>
+    </body>
+</html>
